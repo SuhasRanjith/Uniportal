@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>University Platform - Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-box {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2.2rem;
+  background: #e9efff;
+  color:  rgb(10, 76, 76);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Role Toggle --- */
+.role-toggle {
+  display: flex;
+  background: #f2f4f7;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.role-toggle button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.role-toggle button.active {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Form --- */
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.options label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.options a {
+  font-size: 0.85rem;
+  color: #0066ff;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 100%;
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #0052cc;
+}
+
+.support-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: #666;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .login-box {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+}
+</style>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">🎓</div>
+
+      <h1>Welcome</h1>
+      <p class="subtitle">Sign In to Your Account</p>
+
+      <!-- Toggle Buttons -->
+      <div class="role-toggle">
+        <button id="studentBtn" class="active">Student</button>
+        <button id="adminBtn">Administrator</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" action="index.html" method="get">
+        <label for="email" id="emailLabel">Email / Student ID</label>
+        <div class="input-group">
+          <input type="text" id="email" placeholder="Enter your email or ID" />
+        </div>
+
+        <label for="password">Password</label>
+        <div class="input-group password-group">
+          <input type="password" id="password" placeholder="Enter your password" />
+          <span class="toggle-password" id="togglePassword">👁</span>
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" /> Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+
+    </div>
+
+    
+  </div>
+
+  <script>
+    // --- ROLE TOGGLE ---
+    const studentBtn = document.getElementById("studentBtn");
+    const adminBtn = document.getElementById("adminBtn");
+    const emailLabel = document.getElementById("emailLabel");
+    const emailInput = document.getElementById("email");
+
+    studentBtn.addEventListener("click", () => {
+      studentBtn.classList.add("active");
+      adminBtn.classList.remove("active");
+      emailLabel.textContent = "Email / Student ID";
+      emailInput.placeholder = "Enter your email or ID";
+    });
+
+    adminBtn.addEventListener("click", () => {
+      adminBtn.classList.add("active");
+      studentBtn.classList.remove("active");
+      emailLabel.textContent = "Administrator Email";
+      emailInput.placeholder = "Enter your admin email";
+    });
+
+    // --- PASSWORD VISIBILITY TOGGLE ---
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("password");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      togglePassword.textContent = type === "password" ? "👁" : "🙈";
+    });
+  </script>
+</body>
+</html>

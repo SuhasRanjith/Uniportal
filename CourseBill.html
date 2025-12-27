@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Price Bill</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    .container {
+      width: 380px;
+      padding: 30px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #2a5298;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #1e3c72;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Course Price Bill</h2>
+
+    <form id="courseForm">
+      <label>Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label>ID</label>
+      <input type="text" id="id" placeholder="Enter ID">
+
+      <label>Course</label>
+      <select id="course">
+        <option value="">-- Select Course --</option>
+        <option value="JAVA">JAVA</option>
+        <option value="WEB">WEB DEVELOPMENT</option>
+        <option value="LSE">LSE</option>
+        <option value="DTI">DTI</option>
+      </select>
+
+      <button type="submit">Generate Bill</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const coursePrices = {
+      JAVA: 20000,
+      WEB: 15000,
+      LSE: 12000,
+      DTI: 10000
+    };
+
+    const form = document.getElementById("courseForm");
+    const resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const id = document.getElementById("id").value.trim();
+      const course = document.getElementById("course").value;
+
+      if (!name || !id || !course) {
+        resultDiv.innerHTML = "<p class='error'>⚠ Please fill all the fields.</p>";
+        return;
+      }
+
+      const price = coursePrices[course];
+
+      const formattedPrice = new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR"
+      }).format(price);
+
+      resultDiv.innerHTML = `
+        Hello <strong>${name}</strong> (ID: ${id})<br>
+        Selected Course: <strong>${course}</strong><br>
+        Total Amount: <strong>${formattedPrice}</strong>
+      `;
+    });
+  </script>
+
+</body>
+</html>

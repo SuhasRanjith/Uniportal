@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pttrns – Interface Design Resource</title>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+    .login-btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3rem 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+    .highlight {
+      background: linear-gradient(to right, #7f5af0, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .hero-text p {
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+    .cta-btn {
+      background-color: black;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .mockups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .mockup {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      background-color: #f9f9f9;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .help {
+        background-color: red;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Student Dashboard</a>
+      <a href="#">Admin Panel</a>
+      <a href="#">Achievements</a>
+      <a href="#">Premium</a>
+      <a href="#">Calender</a>
+    </nav>
+    <a href="#" class="login-btn">Log in</a>
+    <a herf="#" class="help">Help</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1> Forge Your Academic Path through our <span class="highlight">Course Scheduler</span>.</h1>
+      <p>the strategic command center for academic success. Designed to empower students with clarity and control, it transforms the chaos of course selection into a streamlined, goal-driven experience. </p>
+      <button class="cta-btn">Start 3-day free trial!</button>
+    </div>
+    <div class="mockups">
+      <div class="mockup">
+        <strong>Empty State</strong><br />
+        Complex transaction in one tap
+      </div>
+      <div class="mockup">
+        <strong>Asana</strong><br />
+        Task management interface
+      </div>
+      <div class="mockup">
+        <strong>Squad</strong><br />
+        Colorful gradient background
+      </div>
+      <div class="mockup">
+        <strong>Onboarding</strong><br />
+        Clear hierarchy
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Pttrns. All rights reserved.
+  </footer>
+</body>
+</html>

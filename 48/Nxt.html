@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webflow Style Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0d0f15;
+            color: white;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #1d63ff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: black;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu li {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .menu li:hover {
+            opacity: 1;
+        }
+
+        .nav-buttons button {
+            margin-left: 15px;
+        }
+
+        .login-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .primary-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: #347dff;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .dark-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(to bottom, #071d3a, #000);
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0.85;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+        }
+
+        /* Logos */
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            opacity: 0.8;
+        }
+
+        .logos img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Notification Bar -->
+    <div class="top-bar">
+        The 2026 State of the Website is out — Read now →
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Webflow</div>
+        <ul class="menu">
+            <li>Platform</li>
+            <li>Solutions</li>
+            <li>Resources</li>
+            <li>Enterprise</li>
+            <li>Pricing</li>
+        </ul>
+
+        <div class="nav-buttons">
+            <button class="login-btn">Log in</button>
+            <button class="primary-btn">Get started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Smarter sites<br>start here</h1>
+        <p>
+            With Webflow’s AI-native platform, you can create, manage, and optimize<br>
+            personalized web experiences that drive real results — faster than ever.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn">Get started</button>
+            <button class="dark-btn">Talk to sales</button>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="logos">
+        <img src="https://dummyimage.com/100x30/fff/000" alt="logo">
+        <img src="https://dummyimage.com/100x30/fff/000" alt="logo">
+        <img src="https://dummyimage.com/100x30/fff/000" alt="logo">
+        <img src="https://dummyimage.com/100x30/fff/000" alt="logo">
+        <img src="https://dummyimage.com/100x30/fff/000" alt="logo">
+    </section>
+
+</body>
+</html>

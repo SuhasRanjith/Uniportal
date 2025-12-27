@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>🎓UniPortal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: white;
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .image {
+            width: 120px;
+            height: 120px;
+
+        }
+        nav {
+            background-color:  skyblue;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        nav img {
+            width: 300px;
+        }
+        .nav-links {
+            flex: 1;
+            text-align: left;
+        }
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: white;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+        .sing-button {
+            background-color: rgb(19, 19, 49);
+            color: white;
+            height: 40px;
+            width: 80px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: monospace;
+            margin-left: 15px;
+        }
+        .log-button {
+            background-color: white;
+            border-color:  rgb(19, 19, 49);
+            border-style: solid;
+            border-width: 1px;
+            color: rgb(10, 76, 76);
+            height: 40px;
+            width: 70px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: monospace;
+        }
+        .highlight {
+            background: linear-gradient(to right, skyblue, rgb(15, 15, 55));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .heigh {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 3rem 2rem;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Inter', sans-serif;
+        }
+        .h1 {
+            max-width: 500px;
+        }
+        .h1 p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: rgb(79, 79, 79);
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <img class="image", src="Uni.png">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Student Dashboard</a></li>
+                    <li><a href="">Admin Panel</a></li>
+                    <li><a href="">Calender</a></li>
+                    <li><a href="">Premium</a></li>
+                </ul>
+            </div>
+            <a href="N1.html">
+                <button class="log-button">LOGIN</button>
+            </a>
+            <button class="sing-button">SignIn</button>
+        </nav>
+        <hr>
+        <section class="heigh">
+        <div class="h1">
+        <h1>Forge your Academic Path through, <span class="highlight">UniPortal</span>.</h1>
+        <p>the strategic command center for academic success. Designed to empower students with clarity and control, 
+            it transforms the chaos of course selection into a streamlined, goal-driven experience.
+            And where many of the experienced teachers across the gloab prepares you acedamically. 
+        </p>
+        </div>
+    </section>
+</body>
+</html>
